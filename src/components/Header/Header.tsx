@@ -3,68 +3,58 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { FiMenu, FiX } from 'react-icons/fi';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const navbarConfig = [
-  { link: '/', text: 'Home' },
-  { link: '#interier', text: 'Interieur Ontwerp' },
-  { link: '#projects', text: 'Projecten' },
-  { link: '#contact', text: 'Contact' },
+  { link: '/', text: 'HOME' },
+  { link: '/projects', text: 'PROJECTEN' },
+  { link: '/about', text: 'OVER ONS' },
+  { link: '/contacts', text: 'CONTACT' },
 ];
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname(); // поточний URL
 
-  // 🔹 Функція для плавного скролу
-  const handleScroll = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    targetId: string,
-  ) => {
-    e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsOpen(false);
-  };
+  const isActive = (path: string) => pathname === path;
 
   return (
-    <header className="w-full top-0 left-0 shadow-md z-50 bg-emerald-100 ">
+    <header className="w-full top-0 left-0 shadow-md z-50 bg-gradient-to-br from-green-50 via-green-100 to-emerald-200">
       <div className="flex justify-between items-center p-4 lg:px-16">
-        {/* Логотип */}
-        <div className="text-2xl font-serif font-bold text-gray-900">
-          <span className="text-green-900">Aleksandr Klusbedrijf</span>
-          <p className="text-sm text-gray-600 tracking-widest">
-            Interieurrenovaties
-          </p>
+        {/* Logo */}
+        <div className="flex items-center space-x-3">
+          <Image
+            src="/img/dalex-b.png"
+            alt="Dalex Bouw Logo"
+            width={0}
+            height={0}
+            sizes="(max-width: 768px) 100px, (max-width: 1024px) 140px, 180px"
+            className="w-20 sm:w-24 md:w-32 lg:w-40 h-auto rounded-2xl"
+          />
         </div>
+        <p className="mr-auto ml-9 underline hidden lg:block text-base text-gray-600 italic tracking-wide leading-relaxed font-medium">
+          Vakwerk voor elk project – groot of klein
+        </p>
 
-        {/* Меню для великих екранів */}
-        <nav className="hidden md:flex space-x-6 text-gray-900 font-medium">
-          {navbarConfig.map((item) =>
-            item.link.startsWith('#') ? (
-              <a
-                key={item.link}
-                href={item.link}
-                onClick={(e) => handleScroll(e, item.link.substring(1))}
-                className="cursor-pointer relative group transition"
-              >
-                {item.text}
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-700 transition-all group-hover:w-full"></span>
-              </a>
-            ) : (
-              <Link
-                key={item.link}
-                href={item.link}
-                className="cursor-pointer relative group transition"
-              >
-                {item.text}
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-700 transition-all group-hover:w-full"></span>
-              </Link>
-            ),
-          )}
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex space-x-6 text-gray-900 font-bold">
+          {navbarConfig.map((item) => (
+            <Link
+              key={item.link}
+              href={item.link}
+              className={`relative group transition ${isActive(item.link)
+                  ? 'text-green-900 underline underline-offset-4'
+                  : 'text-gray-900'
+                }`}
+            >
+              {item.text}
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-700 transition-all group-hover:w-full"></span>
+            </Link>
+          ))}
         </nav>
 
-        {/* Кнопка меню для мобільних */}
+        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -75,19 +65,17 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Затемнення фону при відкритті мобільного меню */}
+      {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-gray-600 bg-opacity-50 md:hidden transition-opacity ${
-          isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
+        className={`fixed inset-0 bg-gray-600 bg-opacity-50 md:hidden transition-opacity ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
         onClick={() => setIsOpen(false)}
       ></div>
 
-      {/* Мобільне меню */}
+      {/* Mobile Nav */}
       <nav
-        className={`md:hidden fixed top-0 right-0 h-full w-2/3 max-w-[280px] bg-white shadow-lg transform ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        } transition-transform duration-300 ease-in-out z-50 p-6`}
+        className={`md:hidden fixed top-0 right-0 h-full w-2/3 max-w-[280px] bg-white shadow-lg transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          } transition-transform duration-300 ease-in-out z-50 p-6`}
       >
         <button
           onClick={() => setIsOpen(false)}
@@ -99,22 +87,13 @@ const Header: React.FC = () => {
         <ul className="flex flex-col space-y-6 mt-12 text-lg font-semibold text-gray-900">
           {navbarConfig.map((item) => (
             <li key={item.link} className="border-b border-gray-300 pb-2">
-              {item.link.startsWith('#') ? (
-                <a
-                  href={item.link}
-                  onClick={(e) => handleScroll(e, item.link.substring(1))}
-                  className="block hover:text-green-900 transition"
-                >
-                  {item.text}
-                </a>
-              ) : (
-                <Link
-                  href={item.link}
-                  className="block hover:text-green-900 transition"
-                >
-                  {item.text}
-                </Link>
-              )}
+              <Link
+                href={item.link}
+                className={`block transition ${isActive(item.link) ? 'text-green-900 font-bold' : 'hover:text-green-900'
+                  }`}
+              >
+                {item.text}
+              </Link>
             </li>
           ))}
         </ul>
@@ -124,3 +103,4 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+
