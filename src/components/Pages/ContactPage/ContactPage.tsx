@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { FaUser, FaEnvelope, FaCommentDots, FaPhone, FaBriefcase } from 'react-icons/fa';
+import { FaUser, FaEnvelope, FaCommentDots, FaPhone } from 'react-icons/fa';
 import { FaHouseChimneyWindow } from 'react-icons/fa6';
+import Image from 'next/image';
 
 
 
@@ -80,7 +81,7 @@ const ContactPage: React.FC = () => {
                 <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
                     {/* Ліва частина – картинка */}
                     <div className="w-full lg:w-1/2 relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-xl overflow-hidden ">
-                        <img
+                        <Image
                             src="/img/img-contact.avif"
                             alt="Contact Visual"
                             className="w-full h-full object-cover rounded-xl"

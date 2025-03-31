@@ -15,7 +15,7 @@ import {
 import 'swiper/css/free-mode';
 import 'swiper/css/thumbs';
 import { Swiper as SwiperType } from 'swiper';
-import Image from 'next/image'; // ✅ Правильний імпорт
+import Image from 'next/image'; 
 
 interface ISliderConfig {
   id: string;
@@ -189,7 +189,7 @@ export default function Slider({ id }: SliderProps) {
         >
           {slides.map(({ id, imgUrl }, index) => (
             <SwiperSlide key={id + index} className="cursor-pointer">
-              <img
+              <Image
                 src={imgUrl}
                 alt={`Slide ${index + 1}`}
                 className="w-full h-20 object-cover rounded-lg"
