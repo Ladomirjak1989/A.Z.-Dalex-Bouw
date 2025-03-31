@@ -1,5 +1,4 @@
 'use client';
-import Slider from '@/components/Swiper/Swiper';
 import React, { useState } from 'react';
 import {
   FaDraftingCompass,
@@ -81,7 +80,7 @@ const projects = [
     views: 2245,
     image: '/img/project1.jpg',
   },
-  // Add 5 more project objects with appropriate data
+ 
   {
     title: 'Modern Kitchen Design',
     location: 'Amsterdam, Westzijde 48',
@@ -274,7 +273,7 @@ const HomePage = () => {
 
 
         <div className="px-6 py-16 bg-white">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, idx) => (
               <div key={idx} className="relative group overflow-hidden rounded-lg shadow-md">
                 <Image
@@ -303,7 +302,7 @@ const HomePage = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Акордеон Diensten */}
