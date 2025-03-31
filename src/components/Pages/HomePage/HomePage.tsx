@@ -78,7 +78,7 @@ const projects = [
     size: '79,45 m²',
     likes: 21,
     views: 2245,
-    image: '/img/project1.jpg',
+    image: '/img/homeprojects/img1.webp',
   },
  
   {
@@ -87,7 +87,7 @@ const projects = [
     size: '65 m²',
     likes: 14,
     views: 1580,
-    image: '/img/project2.jpg',
+    image: '/img/homeprojects/img2.png',
   },
   {
     title: 'Bedroom Renovatie Luxe',
@@ -95,7 +95,7 @@ const projects = [
     size: '45 m²',
     likes: 32,
     views: 1990,
-    image: '/img/project3.jpg',
+    image: '/img/homeprojects/img3.jpg',
   },
   {
     title: 'Minimalistische Flat',
@@ -103,7 +103,7 @@ const projects = [
     size: '58 m²',
     likes: 18,
     views: 1704,
-    image: '/img/project4.jpg',
+    image: '/img/homeprojects/img4.jpg',
   },
   {
     title: 'Scandinavisch Slaapkamer',
@@ -111,7 +111,7 @@ const projects = [
     size: '48 m²',
     likes: 26,
     views: 2100,
-    image: '/img/project5.jpg',
+    image: '/img/homeprojects/img5.webp',
   },
   {
     title: 'Luxe Interieur Renovatie',
@@ -119,7 +119,7 @@ const projects = [
     size: '72 m²',
     likes: 17,
     views: 1988,
-    image: '/img/project6.jpg',
+    image: '/img/homeprojects/img6.jpg',
   },
 ];
 
@@ -273,7 +273,7 @@ const HomePage = () => {
 
 
         <div className="px-6 py-16 bg-white">
-          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, idx) => (
               <div key={idx} className="relative group overflow-hidden rounded-lg shadow-md">
                 <Image
@@ -302,7 +302,7 @@ const HomePage = () => {
                 </div>
               </div>
             ))}
-          </div> */}
+          </div>
         </div>
 
         {/* Акордеон Diensten */}
