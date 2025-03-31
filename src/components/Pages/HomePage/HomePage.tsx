@@ -1,12 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import {
-  FaDraftingCompass,
-  FaTools,
-  FaBath,
-  FaTimes,
-  FaPlus,
-} from 'react-icons/fa';
+import { FaDraftingCompass, FaTools, FaBath, FaTimes, FaPlus } from 'react-icons/fa';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaArrowDown } from 'react-icons/fa';
@@ -46,8 +40,6 @@ const reasons = [
   },
 ];
 
-
-
 const services = [
   {
     icon: <FaDraftingCompass size={40} />,
@@ -69,8 +61,6 @@ const services = [
   },
 ];
 
-
-
 const projects = [
   {
     title: 'Dibrova Park Appartement',
@@ -80,7 +70,7 @@ const projects = [
     views: 2245,
     image: '/img/homeprojects/img1.webp',
   },
- 
+
   {
     title: 'Modern Kitchen Design',
     location: 'Amsterdam, Westzijde 48',
@@ -157,7 +147,6 @@ const HomePage = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-
   return (
     <>
       <section className="py-16 bg-white-50 px-4 md:px-12 lg:px-16">
@@ -166,12 +155,8 @@ const HomePage = () => {
           className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-x-4"
         >
           <hr className="w-16 border-t-2 border-green-950" />
-          <span className="text-sm font-light tracking-wide text-green-900">
-            ONZE
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-green-950">
-            Projectbeheer
-          </h2>
+          <span className="text-sm font-light tracking-wide text-green-900">ONZE</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-green-950">Projectbeheer</h2>
         </div>
         <p className="mt-4 text-lg text-gray-900 text-center md:text-left">
           Wij regelen alles van begin tot eind
@@ -196,14 +181,10 @@ const HomePage = () => {
               </h3>
 
               {/* Description */}
-              <p className="mt-3 text-gray-700 leading-relaxed text-sm">
-                {service.description}
-              </p>
+              <p className="mt-3 text-gray-700 leading-relaxed text-sm">{service.description}</p>
             </div>
           ))}
         </div>
-
-
 
         <div className="bg-white-50  dark:bg-[#14532d] text-gray-900 dark:text-white py-16 px-6 lg:px-24 transition-colors duration-500">
           <h2 className="text-3xl md:text-4xl text-green-950 font-bold text-center mb-12">
@@ -217,8 +198,10 @@ const HomePage = () => {
           hover:border-[#FFCD00] transition duration-300 rounded-lg 
           bg-gray-100 dark:bg-[#166534] hover:bg-gray-200 dark:hover:bg-[#1e4d2b] shadow-md"
               >
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full 
-            bg-[#022c0b] text-[#14532d] shadow-sm">
+                <div
+                  className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full 
+            bg-[#022c0b] text-[#14532d] shadow-sm"
+                >
                   {reason.icon}
                 </div>
                 <div>
@@ -233,8 +216,6 @@ const HomePage = () => {
             ))}
           </div>
         </div>
-
-
 
         {/* Проекти */}
         {/* <div
@@ -271,7 +252,6 @@ const HomePage = () => {
           </div>
         </div> */}
 
-
         <div className="px-6 py-16 bg-white">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, idx) => (
@@ -286,17 +266,17 @@ const HomePage = () => {
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white p-6 flex flex-col justify-end">
                   <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
                   <p className="text-sm text-gray-300 mb-2 flex items-center gap-2">
-                    <FaMapMarkerAlt className='text-yellow-400' /> {project.location}
+                    <FaMapMarkerAlt className="text-yellow-400" /> {project.location}
                   </p>
                   <p className="text-sm mb-2">
                     <span className="font-medium">{project.size}</span>
                   </p>
                   <div className="flex items-center gap-4 text-sm">
                     <span className="flex items-center gap-1">
-                      <FaThumbsUp className='text-yellow-400' /> {project.likes}
+                      <FaThumbsUp className="text-yellow-400" /> {project.likes}
                     </span>
                     <span className="flex items-center gap-1">
-                      <FaEye className='text-yellow-400' /> {project.views}
+                      <FaEye className="text-yellow-400" /> {project.views}
                     </span>
                   </div>
                 </div>
@@ -310,12 +290,8 @@ const HomePage = () => {
           <div className="lg:w-1/2 text-center md:text-left">
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-x-4">
               <hr className="w-16 border-t-2 border-green-950" />
-              <span className="text-sm font-light tracking-wide text-green-900">
-                ONZE
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-green-950">
-                DIENSTEN
-              </h2>
+              <span className="text-sm font-light tracking-wide text-green-900">ONZE</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-green-950">DIENSTEN</h2>
             </div>
             <p className="text-gray-600 mt-4 leading-relaxed">
               Transformeer uw huis met onze deskundige renovatieoplossingen...
@@ -332,9 +308,7 @@ const HomePage = () => {
                     <div className="w-12 h-12 flex items-center justify-center rounded-full bg-green-900 text-white text-lg">
                       {item.icon}
                     </div>
-                    <span className="text-lg font-semibold text-green-900">
-                      {item.title}
-                    </span>
+                    <span className="text-lg font-semibold text-green-900">{item.title}</span>
                   </div>
                   {openIndex === index ? (
                     <FaTimes className="text-green-900" />
@@ -342,9 +316,7 @@ const HomePage = () => {
                     <FaPlus className="text-green-900" />
                   )}
                 </button>
-                {openIndex === index && (
-                  <p className="mt-2 text-gray-600">{item.description}</p>
-                )}
+                {openIndex === index && <p className="mt-2 text-gray-600">{item.description}</p>}
               </div>
             ))}
           </div>
@@ -354,20 +326,18 @@ const HomePage = () => {
       {/* CTA секція з текстом зліва та фото справа */}
       <div className="bg-white mb-12 px-4">
         <div className=" bg-gray-100 flex flex-col-reverse lg:flex-row items-center justify-between max-w-7xl mx-auto mt-10 rounded-lg shadow-lg overflow-hidden">
-
           {/* Ліва частина — текст */}
           <div className="w-full lg:w-1/2 p-6 lg:p-12 text-gray-800">
             <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-4">
               Samen bouwen aan uw droomruimte.
             </h2>
             <p className="text-lg leading-relaxed space-y-2">
-              Wij geloven dat elk project uniek is en persoonlijke aandacht verdient.
-              Van de eerste schets tot de laatste afwerking begeleiden wij u met zorg.
-              Kwaliteit, communicatie en transparantie staan bij ons centraal.
-              Dankzij jarenlange ervaring garanderen we een vlotte uitvoering.
-              Uw wensen vormen de basis voor elk ontwerp en elke renovatie.
-              We zorgen voor slimme oplossingen, binnen planning en budget.
-              Kies voor rust, duidelijkheid en een resultaat waar u trots op bent.
+              Wij geloven dat elk project uniek is en persoonlijke aandacht verdient. Van de eerste
+              schets tot de laatste afwerking begeleiden wij u met zorg. Kwaliteit, communicatie en
+              transparantie staan bij ons centraal. Dankzij jarenlange ervaring garanderen we een
+              vlotte uitvoering. Uw wensen vormen de basis voor elk ontwerp en elke renovatie. We
+              zorgen voor slimme oplossingen, binnen planning en budget. Kies voor rust,
+              duidelijkheid en een resultaat waar u trots op bent.
             </p>
           </div>
 
@@ -388,7 +358,6 @@ const HomePage = () => {
                 Ontwerp uw ruimte en ontvang binnen enkele minuten een schatting.
               </p>
 
-
               <motion.div
                 className="mt-6"
                 animate={{ y: [0, 10, 0] }}
@@ -404,8 +373,6 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-
-
     </>
   );
 };

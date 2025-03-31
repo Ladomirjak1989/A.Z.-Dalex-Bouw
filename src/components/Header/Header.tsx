@@ -39,14 +39,15 @@ const Header: React.FC = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 text-gray-900 font-bold">
-          {navbarConfig.map((item) => (
+          {navbarConfig.map(item => (
             <Link
               key={item.link}
               href={item.link}
-              className={`relative group transition ${isActive(item.link)
+              className={`relative group transition ${
+                isActive(item.link)
                   ? 'text-green-900 underline underline-offset-4'
                   : 'text-gray-900'
-                }`}
+              }`}
             >
               {item.text}
               <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-700 transition-all group-hover:w-full"></span>
@@ -67,15 +68,17 @@ const Header: React.FC = () => {
 
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-gray-600 bg-opacity-50 md:hidden transition-opacity ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-          }`}
+        className={`fixed inset-0 bg-gray-600 bg-opacity-50 md:hidden transition-opacity ${
+          isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
         onClick={() => setIsOpen(false)}
       ></div>
 
       {/* Mobile Nav */}
       <nav
-        className={`md:hidden fixed top-0 right-0 h-full w-2/3 max-w-[280px] bg-white shadow-lg transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
-          } transition-transform duration-300 ease-in-out z-50 p-6`}
+        className={`md:hidden fixed top-0 right-0 h-full w-2/3 max-w-[280px] bg-white shadow-lg transform ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        } transition-transform duration-300 ease-in-out z-50 p-6`}
       >
         <button
           onClick={() => setIsOpen(false)}
@@ -85,12 +88,13 @@ const Header: React.FC = () => {
         </button>
 
         <ul className="flex flex-col space-y-6 mt-12 text-lg font-semibold text-gray-900">
-          {navbarConfig.map((item) => (
+          {navbarConfig.map(item => (
             <li key={item.link} className="border-b border-gray-300 pb-2">
               <Link
                 href={item.link}
-                className={`block transition ${isActive(item.link) ? 'text-green-900 font-bold' : 'hover:text-green-900'
-                  }`}
+                className={`block transition ${
+                  isActive(item.link) ? 'text-green-900 font-bold' : 'hover:text-green-900'
+                }`}
               >
                 {item.text}
               </Link>
@@ -103,4 +107,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-

@@ -3,12 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTelegramPlane,
-  FaYoutube,
-} from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTelegramPlane, FaYoutube } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   const pathname = usePathname();
@@ -20,14 +15,11 @@ const Footer: React.FC = () => {
     { href: '/contacts', label: 'CONTACT' },
   ];
 
-
   return (
     <footer className="bg-green-950 text-white px-6 py-10 shadow-lg">
       <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-md flex flex-col lg:flex-row justify-between items-center p-6 lg:p-10 text-gray-800">
-
         {/* Ліва частина - ім’я + контакти */}
         <div className="flex-1 space-y-4 text-left">
-
           <div className="relative w-fit">
             {/* Кутова форма через clip-path */}
             <div className="mb-24 bg-[#3f5968] text-white px-6 py-3 w-md font-bold text-lg clip-skew-right">
@@ -36,16 +28,16 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-
           <ul className="flex flex-wrap justify-center lg:justify-start gap-6 text-sm font-medium">
-            {navItems.map((item) => (
+            {navItems.map(item => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`transition-all duration-200 ${pathname === item.href
-                    ? 'text-green-900 underline font-bold'
-                    : 'text-gray-700 hover:text-green-800 hover:underline'
-                    }`}
+                  className={`transition-all duration-200 ${
+                    pathname === item.href
+                      ? 'text-green-900 underline font-bold'
+                      : 'text-gray-700 hover:text-green-800 hover:underline'
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -65,10 +57,6 @@ const Footer: React.FC = () => {
             />
           </div>
         </div>
-
-
-
-
 
         {/* Права частина - логотип і соцмережі */}
         <div className="flex-1 text-center lg:text-right space-y-4">
@@ -97,8 +85,6 @@ const Footer: React.FC = () => {
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
 
@@ -108,10 +94,10 @@ const Footer: React.FC = () => {
 
         {/* Copyright текст */}
         <p className="text-sm text-white font-medium tracking-wide">
-          &copy; 2025 <span className="text-yellow-500 font-semibold">UpLadoMyr Digital</span>. All rights reserved.
+          &copy; 2025 <span className="text-yellow-500 font-semibold">UpLadoMyr Digital</span>. All
+          rights reserved.
         </p>
       </div>
-
     </footer>
   );
 };

@@ -5,17 +5,11 @@ import 'swiper/css';
 import 'swiper/css/effect-flip';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import {
-  EffectFlip,
-  Pagination,
-  Navigation,
-  FreeMode,
-  Thumbs,
-} from 'swiper/modules';
+import { EffectFlip, Pagination, Navigation, FreeMode, Thumbs } from 'swiper/modules';
 import 'swiper/css/free-mode';
 import 'swiper/css/thumbs';
 import { Swiper as SwiperType } from 'swiper';
-import Image from 'next/image'; 
+import Image from 'next/image';
 
 interface ISliderConfig {
   id: string;
@@ -37,11 +31,7 @@ interface ISwiperConfig {
     navigation?: boolean;
     // pagination?: boolean | Ipagination;
     modules?: Array<
-      | typeof EffectFlip
-      | typeof Pagination
-      | typeof Navigation
-      | typeof FreeMode
-      | typeof Thumbs
+      typeof EffectFlip | typeof Pagination | typeof Navigation | typeof FreeMode | typeof Thumbs
     >;
     className: string;
     effect?: string;
@@ -103,8 +93,7 @@ const swiperConfig: ISwiperConfig = {
       },
       {
         id: 'Den Haag',
-        imgUrl:
-          'https://remont-otdelka.ru/wp-content/uploads/2024/03/article_49.jpg',
+        imgUrl: 'https://remont-otdelka.ru/wp-content/uploads/2024/03/article_49.jpg',
         title: 'Den Haag',
         text: 'We beheerden een uitgebreide renovatie op de tweede verdieping, waarbij we zorgden voor een naadloze uitvoering terwijl we de klassieke stijl behielden.',
       },
@@ -158,11 +147,7 @@ export default function Slider({ id }: SliderProps) {
                 />
               </div>
               <div className="p-4 text-center">
-                {title && (
-                  <h4 className="text-lg font-semibold text-green-900">
-                    {title}
-                  </h4>
-                )}
+                {title && <h4 className="text-lg font-semibold text-green-900">{title}</h4>}
                 {text && <p className="mt-2 text-gray-600">{text}</p>}
               </div>
             </SwiperSlide>

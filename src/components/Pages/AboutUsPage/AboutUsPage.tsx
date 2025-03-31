@@ -70,9 +70,7 @@ const AboutUsPage = () => {
             <div className="flex flex-col items-center">
               {item.icon}
               <div className="h-1 w-12 bg-green-900 mb-4" />
-              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">
-                {item.text}
-              </p>
+              <p className="text-gray-800 text-sm sm:text-base leading-relaxed">{item.text}</p>
             </div>
           </div>
         ))}
